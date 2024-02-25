@@ -1,7 +1,7 @@
 <?php
 $parola_digitata = $_GET["parola"];
 $parola_censurata = $_GET["censura"];
-$parola_digitata_censurata = str_replace('$parola_censurata', '***', $parola_digitata);
+$parola_digitata_censurata = str_replace($parola_censurata, '***', $parola_digitata);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +16,13 @@ $parola_digitata_censurata = str_replace('$parola_censurata', '***', $parola_dig
 <p><?php echo $parola_digitata ?></p>
     <hr>
     <span>lunghezza Paragrafo: <?php echo strlen($parola_digitata)?></span>
+
 <h2>la parola censurata è:</h2>
-    <p><?php echo $censured_paragraph ?></p>
-    <span> lunghezza Paragrafo: <?php echo strlen($censured_paragraph)?></span>
+    <p><?php echo $parola_digitata_censurata ?></p>
+
+    <span> lunghezza Paragrafo: <?php echo strlen($parola_digitata_censurata)?></span>
+
+
+
 </body>
 </html>
